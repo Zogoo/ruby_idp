@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/Zogoo/saml_idp
+  revision: d5c4edf005c453f46a89d9d03da5e5ff4b03f0d7
+  specs:
+    saml_idp (0.8.0)
+      activesupport (>= 3.2)
+      builder (>= 3.0)
+      nokogiri (>= 1.6.2)
+      uuid (>= 2.3)
+      xmlenc (>= 0.7.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -47,6 +58,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
@@ -74,6 +86,14 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    devise (4.6.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 6.0)
+      responders
+      warden (~> 1.2.3)
+    doorkeeper (5.0.2)
+      railties (>= 4.2)
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.11.1)
@@ -84,6 +104,14 @@ GEM
     io-like (0.3.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
+    letter_opener_web (1.3.4)
+      actionmailer (>= 3.2)
+      letter_opener (~> 1.0)
+      railties (>= 3.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -91,6 +119,8 @@ GEM
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    macaddr (1.7.2)
+      systemu (~> 2.6.5)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (0.3.3)
@@ -104,6 +134,9 @@ GEM
     nio4r (2.4.0)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
+    openssl (2.1.2)
+    orm_adapter (0.5.0)
+    pg (1.1.4)
     public_suffix (3.1.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -138,6 +171,9 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.6.0)
+    responders (3.0.0)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.3)
     sass (3.7.4)
@@ -166,6 +202,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.1)
+    systemu (2.6.5)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
@@ -176,6 +213,10 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    uuid (2.3.9)
+      macaddr (~> 1.0)
+    warden (1.2.8)
+      rack (>= 2.0.6)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -184,6 +225,13 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
+    xmlenc (0.7.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      nokogiri (>= 1.6.0, < 2.0.0)
+      xmlmapper (>= 0.7.3)
+    xmlmapper (0.7.3)
+      nokogiri (~> 1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -196,10 +244,16 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  devise
+  doorkeeper
   jbuilder (~> 2.5)
+  letter_opener_web
   listen (>= 3.0.5, < 3.2)
+  openssl
+  pg
   puma (~> 3.11)
   rails (~> 5.2.3)
+  saml_idp!
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
