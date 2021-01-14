@@ -1,0 +1,2 @@
+class SamlIdpController < ApplicationController
+end

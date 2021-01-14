@@ -35,6 +35,8 @@ gem 'pg'
 gem 'doorkeeper'
 # Saml IdP library
 gem 'saml_idp', git: 'https://github.com/saml-idp/saml_idp'
+# Saml SP library
+gem 'ruby-saml'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
