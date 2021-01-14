@@ -25,6 +25,17 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Devise for authentication
+gem 'devise'
+# Database library
+gem 'pg'
+
+### Authentication methods ###
+# OpenID connect IdP library
+gem 'doorkeeper'
+# Saml IdP library
+gem 'saml_idp', git: 'https://github.com/saml-idp/saml_idp'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
