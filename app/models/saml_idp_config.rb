@@ -1,0 +1,2 @@
+class SamlIdpConfig < ApplicationRecord
+end

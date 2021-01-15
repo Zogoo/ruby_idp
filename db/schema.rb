@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_14_080443) do
+ActiveRecord::Schema.define(version: 2021_01_15_074407) do
+
+  create_table "saml_idp_configs", force: :cascade do |t|
+    t.string "x509_certificate"
+    t.string "secret_key"
+    t.string "password"
+    t.string "algorithm"
+    t.string "organization_name"
+    t.string "organization_url"
+    t.string "base_saml_location"
+    t.string "entity_id"
+    t.string "reference_id_generator"
+    t.string "attribute_service_location"
+    t.string "single_service_post_location"
+    t.string "single_service_redirect_location"
+    t.string "single_logout_service_post_location"
+    t.string "single_logout_service_redirect_location"
+    t.string "attributes"
+    t.string "assertion_consumer_service_hosts"
+    t.string "session_expiry"
+    t.json "service_provider"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

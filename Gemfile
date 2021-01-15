@@ -30,9 +30,10 @@ gem 'devise'
 # Database library
 gem 'pg'
 
-### Authentication methods ###
+### Authentication related gems ###
 # OpenID connect IdP library
 gem 'doorkeeper'
+gem 'doorkeeper-openid_connect'
 # Saml IdP library
 gem 'saml_idp', git: 'https://github.com/saml-idp/saml_idp'
 # Saml SP library
@@ -44,6 +45,23 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # RSPEC for integration tests
+  gem 'rspec-activemodel-mocks'
+  gem 'rspec-given'
+  gem 'rspec-rails'
+  # VCR cassete for test
+  gem 'vcr'
+  gem 'webmock'
+  # Faker is awesome
+  gem 'faker', :git => 'https://github.com/stympy/faker.git'
+  # Factory bots
+  gem 'factory_bot_rails'
+  # Rubocop for coding style
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-checkstyle_formatter', require: false
+  # Secure code check
+  gem 'brakeman', require: false
 end
 
 group :development do
