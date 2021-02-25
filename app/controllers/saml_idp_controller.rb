@@ -1,5 +1,6 @@
 class SamlIdpController < ApplicationController
   include SamlIdp::Controller
+  before_action :configure
 
   def new; end
 
@@ -30,4 +31,10 @@ class SamlIdpController < ApplicationController
     }
   end
   protected :idp_make_saml_response
+
+  private 
+
+  def configure
+    # TODO: implement SP config
+  end
 end
